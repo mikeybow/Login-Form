@@ -5,7 +5,7 @@
 }
 
 body {
-   background-color: steelblue;
+   background-color: gray;
    color: #fff;
    font-family: "Muli", sans-serif;
    display: flex;
@@ -17,20 +17,27 @@ body {
    margin: 0;
 }
 
+.container {
+    border: solid;
+    padding: 60px;
+    background-color: lime;
+}
 
 .form-control label {
     font-size: 20px;
     display: flex;
     position: relative;
-    z-index: -2;
+    z-index: 1;
     color: white;
+    padding: 30px;
+    right: 25px;
 }
 
 input {
     padding: 10px;
     border: none;
     position: relative;
-    top: 40px;
+    top: 60px;
     background: transparent;
     border-style: dashed;
     border-top: none;
@@ -38,4 +45,23 @@ input {
     border-right: none;
     border-color: darkmagenta;
     z-index: 5;
+}
+
+.btn {
+    position: relative;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    transform: translateY(-30px);
 }
